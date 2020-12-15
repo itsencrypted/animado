@@ -1,5 +1,6 @@
 import 'package:animado/components/rive_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 const kDharma1 = Color(0xFF2536FF);
@@ -44,3 +45,17 @@ final Map<String, RiveAnimation> riveanimations = {
       tileColor: Color(0xFF4A3F8A)
   ),
 };
+
+
+
+
+
+TextStyle kTextStyle = GoogleFonts.poppins(
+  textStyle: TextStyle(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w400,
+      fontStyle: FontStyle.normal,
+      color: Colors.grey.shade800,
+      letterSpacing: 1.627907
+  ),
+);

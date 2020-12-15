@@ -2,6 +2,7 @@
 // import 'dart:html';
 
 import 'package:animado/components/dharma_button.dart';
+import 'package:animado/screens/menu1_screen.dart';
 import 'package:animado/screens/rive_animations_screen.dart';
 import 'package:animado/screens/text_animations_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,11 @@ class HomeScreen extends StatelessWidget {
               DharmaButton(onPressed: ()=> Navigator.pushNamed(context,
                   '/rive_animations'), titleOfButton: 'RIVE ANIMATIONS',),
               SizedBox(height:50),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: DharmaButton(onPressed: ()=> Navigator.pushNamed(context,
-                    TextAnimationsScreen.id), titleOfButton: 'TEXT ANIMATIONS',),
-              ),
+              DharmaButton(onPressed: ()=> Navigator.pushNamed(context,
+                  TextAnimationsScreen.id), titleOfButton: 'TEXT ANIMATIONS',),
+              SizedBox(height: 30,),
+              DharmaButton(onPressed: ()=> Navigator.pushNamed(context,
+                  Menu1Screen.id), titleOfButton: 'Menu1',),
             ],
           )
         ],

@@ -14,8 +14,6 @@ class _TextAnimationsScreenState extends State<TextAnimationsScreen>
   AnimationController controller;
   Animation animation;
 
-//  final kLightBlueish = Color(0xFF33BBB5);
-//  final kLightGreen = Color(0xFF95E08E);
 
   @override
   void initState() {
@@ -42,8 +40,6 @@ class _TextAnimationsScreenState extends State<TextAnimationsScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//        backgroundColor: animation.value,
-        backgroundColor: Colors.black,
         body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.0),
             child: Center(
@@ -51,121 +47,106 @@ class _TextAnimationsScreenState extends State<TextAnimationsScreen>
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SizedBox(
-                            width: 400,
-                            child: TextLiquidFill(
-                              text: 'Donating',
-                              waveColor: Colors.amber,
-                              boxBackgroundColor: Colors.grey,
-                              textStyle: TextStyle(
-                                fontSize: 80.0,
-                                fontWeight: FontWeight.bold,
+                          ListView(
+                            children: <Widget>[
+                              Card(
+                                child: ListTile(
+                                  leading: Icon(Icons.people_rounded),
+                                  title: Text('Text Animation example'),
+                                  subtitle: Text('1'),
+                                  onTap: ()=> textanimations['flashy'],
+                                  trailing: Icon(Icons.android_sharp),
+                                ),
                               ),
-                              boxHeight: 113.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                          SizedBox(
-                            width: 250.0,
-                            child: ColorizeAnimatedTextKit(
-                                onTap: () {
-                                  print("Tap Event");
-                                },
-                                text: [
-                                  "Thank you!",
-                                  "Your act of kindness",
-                                  "is saving someone's life",
-                                ],
-                                textStyle: TextStyle(
-                                  fontSize: 40.0,
-                                  fontFamily: "Horizon",
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.5,
+                              Card(
+                                child: ListTile(
+                                  leading: Icon(Icons.people_rounded),
+                                  title: Text('Text Animation example'),
+                                  subtitle: Text('2'),
+                                  onTap: ()=> textanimations['signature'],
+                                  trailing: Icon(Icons.android_sharp),
                                 ),
-                                colors: [
-                                  Colors.purple,
-                                  Colors.blue,
-                                  Colors.yellow,
-                                  Colors.red,
-                                ],
-                                textAlign: TextAlign.center,
-                                alignment: AlignmentDirectional
-                                    .topStart // or Alignment.topLeft
-                            ),
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                          SizedBox(
-                            width: 400.0,
-                            child: ScaleAnimatedTextKit(
-                              onTap: () {
-                                print("Tap Event");
-                              },
-                              text: ["Think", "Build", "Ship"],
-                              textStyle: GoogleFonts.germaniaOne(
-                                textStyle: TextStyle(
-                                    color: Colors.indigo,
-                                    letterSpacing: .5,
-                                    fontSize: 70,
-                                    fontWeight: FontWeight.w400),
                               ),
-                              textAlign: TextAlign.start,
-                              alignment: AlignmentDirectional.topStart, // or
-                              // Alignment.topLeft,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                          SizedBox(
-                            width: 400.0,
-                            child: TypewriterAnimatedTextKit(
-                                onTap: () {
-                                  print("Tap Event");
-                                },
-                                text: [
-                                  "dPlasma",
-                                  "Clinical trials of convalescent Plasma",
-                                  "Consensys Health - Stop Covid19",
-                                  "Data is the medicine we need",
-                                ],
-                                textStyle: GoogleFonts.courierPrime(
-                                  textStyle: TextStyle(
-                                      color: Colors.white,
-                                      letterSpacing: .5,
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.w400),
+                              Card(
+                                child: ListTile(
+                                  leading: Icon(Icons.people_rounded),
+                                  title: Text('Text Animation example'),
+                                  subtitle: Text('3'),
+                                  onTap: ()=> textanimations['typewriter'],
+                                  trailing: Icon(Icons.android_sharp),
                                 ),
-                                textAlign: TextAlign.start,
-                                alignment: AlignmentDirectional
-                                    .topStart // or Alignment.topLeft
-                            ),
-                          ),
-                          SizedBox(
-                            height: 80,
-                          ),
-                          SizedBox(
-                            width: 250.0,
-                            child: TyperAnimatedTextKit(
-                                onTap: () {
-                                  print("Tap Event");
-                                },
-                                text: [
-                                  "Hematologist signature",],
-                                textStyle: GoogleFonts.homemadeApple(
-                                  textStyle: TextStyle(
-                                    fontSize: 30.0,
-                                    color: Colors.red,
-                                  ),
-                                ),
-                                textAlign: TextAlign.start,
-                                alignment: AlignmentDirectional
-                                    .topStart // or Alignment.topLeft
-                            ),
-                          ),
-                        ])))));
+                              ),
+                            ],
+                          )
+                        ]
+                    )
+                )
+            )
+        )
+    );
   }
 }
+
+//textanimations['flashy']
+//textanimations['signature']
+//textanimations['typewriter']
+final Map<String, Widget> textanimations = {
+  'flashy': SizedBox(
+    width: 400.0,
+    child: ScaleAnimatedTextKit(
+      onTap: () {
+        print("Tap Event");
+      },
+      text: ["Tamo", "Junto", "Bora!!"],
+      textStyle: GoogleFonts.germaniaOne(
+        textStyle: TextStyle(
+            color: Colors.amber,
+            letterSpacing: .5,
+            fontSize: 70,
+            fontWeight: FontWeight.w400),
+      ),
+      textAlign: TextAlign.start,
+    ),
+  ),
+  'signature': SizedBox(
+    width: 250.0,
+    child: TyperAnimatedTextKit(
+        onTap: () {
+          print("Tap Event");
+        },
+        text: [
+          "Quero Ânimo!",],
+        textStyle: GoogleFonts.homemadeApple(
+          textStyle: TextStyle(
+            fontSize: 30.0,
+            color: Colors.red,
+          ),
+        ),
+        textAlign: TextAlign.start,
+    ),
+  ),
+  'typewriter': SizedBox(
+    width: 400.0,
+    child: TypewriterAnimatedTextKit(
+        onTap: () {
+          print("Tap Event");
+        },
+        text: [
+          "O sucesso dos seu resultado, depende só de"
+              " você",
+          "Faz tempo que você não treina com a gente!",
+          "Não vai desistir logo agora.",
+        ],
+        textStyle: GoogleFonts.courierPrime(
+          textStyle: TextStyle(
+              color: Colors.white,
+              letterSpacing: .5,
+              fontSize: 30,
+              fontWeight: FontWeight.w400),
+        ),
+        textAlign: TextAlign.start,
+    ),
+  ),
+};
+
+
