@@ -3,7 +3,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextAnimationsScreen extends StatefulWidget {
-  static const String id = '/txt_animations';
+  static const String id = '/text_animations';
 
   @override
   _TextAnimationsScreenState createState() => _TextAnimationsScreenState();

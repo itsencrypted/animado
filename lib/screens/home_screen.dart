@@ -1,7 +1,11 @@
-import 'dart:html';
+// ignore: avoid_web_libraries_in_flutter
+// import 'dart:html';
 
 import 'package:animado/components/dharma_button.dart';
+import 'package:animado/screens/rive_animations_screen.dart';
+import 'package:animado/screens/text_animations_screen.dart';
 import 'package:flutter/material.dart';
+
 
 class HomeScreen extends StatelessWidget {
   static const String id = '/';
@@ -9,11 +13,28 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.black,
       body: Stack(
-        
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Image.asset('assets/logo.png'),
+              ),
+              SizedBox(height:50),
+              DharmaButton(onPressed: ()=> Navigator.pushNamed(context,
+                  '/rive_animations'), titleOfButton: 'RIVE ANIMATIONS',),
+              SizedBox(height:50),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DharmaButton(onPressed: ()=> Navigator.pushNamed(context,
+                    TextAnimationsScreen.id), titleOfButton: 'TEXT ANIMATIONS',),
+              ),
+            ],
+          )
+        ],
       ),
-
     );
   }
 }
